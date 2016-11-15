@@ -1,0 +1,31 @@
+vagrant_hostname: moduleupgrade.local
+vagrant_machine_name: moduleupgrade.local
+vagrant_ip: 0.0.0.0
+drupal_composer_install_dir: "/var/www/drupalvm/web"
+install_site: false
+build_composer_project: false
+
+# Comment out any extra utilities you don't want to install. If you don't want
+# to install *any* extras, set this value to an empty set, e.g. `[]`.
+installed_extras:
+  # - adminer
+  # - blackfire
+  # - drupalconsole
+  # - elasticsearch
+  # - java
+  - mailhog
+  # - memcached
+  # - newrelic
+  # - nodejs
+  #- pimpmylog
+  # - redis
+  # - ruby
+  # - selenium
+  # - solr
+  # - varnish
+  # - xdebug
+  # - xhprof
+
+# Add any extra apt or yum packages you would like installed.
+extra_packages:
+  - sqlite
