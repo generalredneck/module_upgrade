@@ -1,0 +1,14 @@
+uuid: 3f93c284-eaaf-4fe0-bb51-d27ec0a44bd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_maintainer
+  module:
+    - user
+id: user_remove_role_action.site_maintainer
+label: 'Remove the Site Maintainer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: site_maintainer

@@ -1,0 +1,9 @@
+uuid: d22c7c63-d1b0-4748-b81d-0f9a93d1460c
+langcode: en
+status: true
+dependencies: {  }
+id: site_maintainer
+label: 'Site Maintainer'
+weight: 4
+is_admin: null
+permissions: {  }
