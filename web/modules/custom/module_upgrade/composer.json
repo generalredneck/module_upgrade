@@ -1,0 +1,14 @@
+{
+  "name": "drupal/module_upgrade",
+  "type": "drupal-module",
+  "description": "Provides the main system for running a Module Upgrade Drupal project updating system.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/module_upgrade",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/module_upgrade",
+    "source": "http://cgit.drupalcode.org/module_upgrade"
+  },
+  "require": { }
+}

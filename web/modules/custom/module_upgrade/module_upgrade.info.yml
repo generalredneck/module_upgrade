@@ -1,0 +1,5 @@
+name: Module Upgrade System
+type: module
+description: Provides the main system for running a Module Upgrade Drupal project updating system.
+core: 8.x
+package: Module Upgrade

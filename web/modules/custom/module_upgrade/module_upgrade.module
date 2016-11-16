@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains module_upgrade.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function module_upgrade_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the module_upgrade module.
+    case 'help.page.module_upgrade':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides the main system for running a Module Upgrade Drupal project updating system.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
