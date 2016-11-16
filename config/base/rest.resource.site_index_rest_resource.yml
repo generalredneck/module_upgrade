@@ -1,0 +1,19 @@
+uuid: a46c5cd1-552c-47d2-9a5c-1c9104070e60
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - module_upgrade
+    - serialization
+    - user
+id: site_index_rest_resource
+plugin_id: site_index_rest_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - cookie
