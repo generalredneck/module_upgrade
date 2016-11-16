@@ -1,0 +1,17 @@
+uuid: 8cd44820-e6b6-4f11-95f6-446f4916e2d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Site
+type: site
+description: 'Website that updates are being tracked on.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

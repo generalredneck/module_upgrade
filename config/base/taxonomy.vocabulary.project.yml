@@ -1,0 +1,9 @@
+uuid: 27a2d315-9471-47a8-8e10-6969d814f1ce
+langcode: en
+status: true
+dependencies: {  }
+name: Project
+vid: project
+description: 'Project on Drupal'
+hierarchy: 0
+weight: 0

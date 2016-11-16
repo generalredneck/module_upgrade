@@ -1,7 +1,8 @@
 vagrant_hostname: moduleupgrade.local
 vagrant_machine_name: moduleupgrade.local
 vagrant_ip: 0.0.0.0
-drupal_composer_install_dir: "/var/www/drupalvm/web"
+vagrant_public_ip: "192.168.0.17"
+drupal_composer_install_dir: "/var/www/drupalvm"
 install_site: false
 build_composer_project: false
 

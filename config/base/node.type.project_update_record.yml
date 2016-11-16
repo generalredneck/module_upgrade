@@ -1,0 +1,17 @@
+uuid: 6a8374bc-8db3-40cb-b44f-39634e097ede
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Project Update Record'
+type: project_update_record
+description: 'A record of a project that has been updated. This is usually gathered from the Drupal project release feeds.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

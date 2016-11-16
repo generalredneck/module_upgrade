@@ -1,0 +1,21 @@
+uuid: 802e8b1f-b714-4cd2-8256-2ed56cf5c36f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_project_machine_name
+field_name: field_project_machine_name
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

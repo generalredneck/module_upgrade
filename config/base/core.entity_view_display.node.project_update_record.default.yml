@@ -1,0 +1,16 @@
+uuid: 58f16282-7184-4203-a2ab-1be9c708df2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project_update_record
+  module:
+    - user
+id: node.project_update_record.default
+targetEntityType: node
+bundle: project_update_record
+mode: default
+content:
+  links:
+    weight: 100
+hidden: {  }

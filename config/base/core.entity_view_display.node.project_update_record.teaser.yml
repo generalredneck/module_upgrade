@@ -1,0 +1,17 @@
+uuid: c6c16011-6c96-48b4-8e4f-3a3edc8a85ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.project_update_record
+  module:
+    - user
+id: node.project_update_record.teaser
+targetEntityType: node
+bundle: project_update_record
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

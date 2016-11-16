@@ -1,0 +1,9 @@
+uuid: ef134e42-f3e3-4403-9e94-7537132b395b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Drupal Core Version'
+vid: drupal_core_version
+description: ''
+hierarchy: 0
+weight: 0
