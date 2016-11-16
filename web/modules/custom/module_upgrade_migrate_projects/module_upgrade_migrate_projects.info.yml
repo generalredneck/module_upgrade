@@ -1,0 +1,8 @@
+name: Module Upgrade Migrate Projects
+type: module
+description: Module dedicated to migrating and maintaining the full list of projects.
+core: 8.x
+package: Module Upgrade
+dependencies:
+  - migrate_source_csv
+  - module_upgrade

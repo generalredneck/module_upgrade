@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains module_upgrade_migrate_projects.module..
+ *
+ * TODO: add migration for https://drupal.org/files/releases.tsv
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function module_upgrade_migrate_projects_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the module_upgrade_migrate_projects module.
+    case 'help.page.module_upgrade_migrate_projects':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module dedicated to migrating and maintaining the full list of projects.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

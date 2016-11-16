@@ -1,0 +1,14 @@
+{
+  "name": "drupal/module_upgrade_migrate_projects",
+  "type": "drupal-module",
+  "description": "Module dedicated to migrating and maintaining the full list of projects.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/module_upgrade_migrate_projects",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/module_upgrade_migrate_projects",
+    "source": "http://cgit.drupalcode.org/module_upgrade_migrate_projects"
+  },
+  "require": { }
+}
