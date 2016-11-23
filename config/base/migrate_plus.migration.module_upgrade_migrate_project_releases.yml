@@ -1,0 +1,50 @@
+uuid: 24c80dd8-1166-483d-b3f7-e0f3412ab909
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - module_upgrade_migrate_projects
+id: module_upgrade_migrate_project_releases
+migration_tags:
+  - 'Module Upgrade'
+  - CSV
+migration_group: 'Module Upgrade'
+label: 'Drupal Project Import'
+source:
+  plugin: csv
+  path: 'public://module_upgrade/csv/releases.tsv'
+  delimiter: "\t"
+  header_row_count: 1
+  keys:
+    - project_machine_name
+    - version
+process:
+  title:
+    plugin: concat
+    source:
+      - project_machine_name
+      - version
+  field_drupal_core_version:
+    -
+      plugin: entity_lookup
+      source: api
+      entity_type: taxonomy_term
+    -
+      plugin: skip_on_empty
+      method: row
+  field_project:
+    -
+      plugin: migration
+      migration: module_upgrade_migrate_projects
+      source: project_machine_name
+    -
+      plugin: skip_on_empty
+      method: row
+  field_project_version: version
+destination:
+  plugin: 'entity:node'
+  default_bundle: project_update_record
+migration_dependencies:
+  required:
+    - module_upgrade_migrate_projects

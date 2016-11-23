@@ -1,0 +1,29 @@
+uuid: aafa191c-3794-47cf-89ac-937c80ff40c4
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - module_upgrade_migrate_projects
+id: module_upgrade_migrate_projects
+migration_tags:
+  - 'Module Upgrade'
+  - CSV
+migration_group: 'Module Upgrade'
+label: 'Drupal Project Import'
+source:
+  plugin: migrate_upgrade_csv
+  path: 'public://module_upgrade/csv/releases.tsv'
+  delimiter: "\t"
+  header_row_count: 1
+  keys:
+    - project_machine_name
+process:
+  vid:
+    plugin: default_value
+    default_value: project
+  name: project_name
+  field_project_machine_name: project_machine_name
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null
