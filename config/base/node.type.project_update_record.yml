@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Project Update Record'
+name: 'Project Release'
 type: project_update_record
 description: 'A record of a project that has been updated. This is usually gathered from the Drupal project release feeds.'
 help: ''

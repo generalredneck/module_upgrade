@@ -1,0 +1,19 @@
+uuid: c424db20-1838-4450-a39d-e8cd94acbfc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_version
+    - node.type.project_update_record
+id: node.project_update_record.field_project_version
+field_name: field_project_version
+entity_type: node
+bundle: project_update_record
+label: 'Project Version'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

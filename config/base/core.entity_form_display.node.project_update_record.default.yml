@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.project_update_record.field_drupal_core_version
+    - field.field.node.project_update_record.field_project
+    - field.field.node.project_update_record.field_project_version
+    - field.field.node.project_update_record.field_release_type
     - node.type.project_update_record
   module:
     - path
@@ -16,6 +20,37 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_drupal_core_version:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_project:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_project_version:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_release_type:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   path:
     type: path
     weight: 30
