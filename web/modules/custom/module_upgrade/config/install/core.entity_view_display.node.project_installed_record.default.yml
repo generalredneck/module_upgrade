@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_installed_record.field_drupal_core_version
+    - field.field.node.project_installed_record.field_project
+    - field.field.node.project_installed_record.field_project_version
+    - field.field.node.project_installed_record.field_site
+    - node.type.project_installed_record
+  module:
+    - user
+id: node.project_installed_record.default
+targetEntityType: node
+bundle: project_installed_record
+mode: default
+content:
+  field_drupal_core_version:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_project:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_project_version:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_site:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+hidden: {  }

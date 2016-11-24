@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Project
+vid: project
+description: 'Project on Drupal'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_drupal_core_version
+    - taxonomy.vocabulary.drupal_core_version
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_drupal_core_version
+field_name: field_drupal_core_version
+entity_type: taxonomy_term
+bundle: project
+label: 'Drupal Core Version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      drupal_core_version: drupal_core_version
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

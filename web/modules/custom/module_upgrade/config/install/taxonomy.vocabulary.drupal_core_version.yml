@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Drupal Core Version'
+vid: drupal_core_version
+description: ''
+hierarchy: 0
+weight: 0

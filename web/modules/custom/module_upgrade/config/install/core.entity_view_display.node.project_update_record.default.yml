@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_update_record.field_project
+    - field.field.node.project_update_record.field_project_version
+    - field.field.node.project_update_record.field_release_type
+    - node.type.project_update_record
+  module:
+    - user
+id: node.project_update_record.default
+targetEntityType: node
+bundle: project_update_record
+mode: default
+content:
+  field_project:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_project_version:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_release_type:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+hidden: {  }

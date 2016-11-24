@@ -1,0 +1,67 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_install().
+ */
+function module_upgrade_install() {
+  module_upgrade_update_8001();
+}
+
+/**
+ * Set some of the default terms.
+ */
+function module_upgrade_update_8001() {
+  $project_statuses = [
+    'not-fetched',
+    'insecure',
+    'unpublished',
+    'revoked',
+    'unsupported',
+    'published',
+  ];
+  foreach ($project_statuses as $status) {
+    Term::create([
+      'name' => $status,
+      'vid' => 'project_status',
+    ])->save();
+  }
+
+  $release_types = [
+    'Security update',
+    'Bug fixes',
+    'New features',
+  ];
+  foreach ($release_types as $type) {
+    Term::create([
+      'name' => $type,
+      'vid' => 'release_type',
+    ])->save();
+  }
+
+  $project_types = [
+    'project_core',
+    'project_distribution',
+    'project_module',
+    'project_theme',
+  ];
+  foreach ($release_types as $type) {
+    Term::create([
+      'name' => $type,
+      'vid' => 'project_type',
+    ])->save();
+  }
+
+  $drupal_core_versions = [
+    '8.x',
+    '7.x',
+    '6.x',
+  ];
+  foreach ($drupal_core_versions as $version) {
+    Term::create([
+      'name' => $version,
+      'vid' => 'drupal_core_version',
+    ])->save();
+  }
+}

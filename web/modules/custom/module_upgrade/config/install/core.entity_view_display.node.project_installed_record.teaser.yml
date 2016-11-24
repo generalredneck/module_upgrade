@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.project_installed_record
+  module:
+    - user
+id: node.project_installed_record.teaser
+targetEntityType: node
+bundle: project_installed_record
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

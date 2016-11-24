@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_supported_major_versions
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_supported_major_versions
+field_name: field_supported_major_versions
+entity_type: taxonomy_term
+bundle: project
+label: 'Supported Major Versions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

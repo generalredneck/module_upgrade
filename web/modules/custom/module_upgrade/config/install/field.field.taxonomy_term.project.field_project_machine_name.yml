@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_project_machine_name
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_project_machine_name
+field_name: field_project_machine_name
+entity_type: taxonomy_term
+bundle: project
+label: 'Machine Name'
+description: 'This is the machine name for a Drupal project. This is the last part of the url at a Drupal project''s URL.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

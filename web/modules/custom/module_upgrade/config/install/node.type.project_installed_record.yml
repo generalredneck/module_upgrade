@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Project Installed Record'
+type: project_installed_record
+description: 'The current installed version of a Drupal project on a site.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
