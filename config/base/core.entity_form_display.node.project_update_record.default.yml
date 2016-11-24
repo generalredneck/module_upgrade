@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.project_update_record.field_drupal_core_version
     - field.field.node.project_update_record.field_project
     - field.field.node.project_update_record.field_project_version
     - field.field.node.project_update_record.field_release_type
@@ -20,14 +19,6 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_drupal_core_version:
-    weight: 31
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_project:
     weight: 32
     settings:

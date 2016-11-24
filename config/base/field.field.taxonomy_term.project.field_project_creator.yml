@@ -1,0 +1,19 @@
+uuid: aed74088-5515-4335-aff5-df89da6a84e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_project_creator
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_project_creator
+field_name: field_project_creator
+entity_type: taxonomy_term
+bundle: project
+label: Creator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

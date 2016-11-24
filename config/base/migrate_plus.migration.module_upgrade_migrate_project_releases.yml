@@ -19,17 +19,22 @@ source:
   keys:
     - project_machine_name
     - version
+  constants:
+    space: ' '
 process:
   title:
     plugin: concat
     source:
       - project_machine_name
+      - constants/space
       - version
   field_drupal_core_version:
     -
       plugin: entity_lookup
       source: api
       entity_type: taxonomy_term
+      bundle: drupal_core_version
+      value_key: name
     -
       plugin: skip_on_empty
       method: row
@@ -46,5 +51,4 @@ destination:
   plugin: 'entity:node'
   default_bundle: project_update_record
 migration_dependencies:
-  required:
-    - module_upgrade_migrate_projects
+  required: {  }

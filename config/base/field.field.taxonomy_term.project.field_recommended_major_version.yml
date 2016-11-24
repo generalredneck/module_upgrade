@@ -1,0 +1,19 @@
+uuid: 729831a8-0249-4480-8363-06f2ca3748c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_recommended_major_version
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_recommended_major_version
+field_name: field_recommended_major_version
+entity_type: taxonomy_term
+bundle: project
+label: 'Recommended Major Version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

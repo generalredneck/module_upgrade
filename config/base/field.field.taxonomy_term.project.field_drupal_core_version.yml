@@ -1,19 +1,19 @@
-uuid: 150e7117-b23c-4acf-a0ff-4da0f61d9ec6
+uuid: cb5ccb9a-80c8-47c1-9482-8c69306cda90
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_drupal_core_version
-    - node.type.project_update_record
+    - field.storage.taxonomy_term.field_drupal_core_version
     - taxonomy.vocabulary.drupal_core_version
-id: node.project_update_record.field_drupal_core_version
+    - taxonomy.vocabulary.project
+id: taxonomy_term.project.field_drupal_core_version
 field_name: field_drupal_core_version
-entity_type: node
-bundle: project_update_record
+entity_type: taxonomy_term
+bundle: project
 label: 'Drupal Core Version'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
