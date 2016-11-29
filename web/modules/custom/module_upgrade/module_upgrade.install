@@ -46,7 +46,7 @@ function module_upgrade_update_8001() {
     'project_module',
     'project_theme',
   ];
-  foreach ($release_types as $type) {
+  foreach ($project_types as $type) {
     Term::create([
       'name' => $type,
       'vid' => 'project_type',
