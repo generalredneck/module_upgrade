@@ -21,6 +21,7 @@ source:
     - version
   constants:
     space: ' '
+    dash: '-'
 process:
   title:
     plugin: concat
@@ -46,7 +47,16 @@ process:
     -
       plugin: skip_on_empty
       method: row
-  field_project_version: version
+  version_api_search_source:
+    plugin: concat
+    source:
+      - api
+      - constants/dash
+  field_project_version:
+    plugin: str_replace
+    source: version
+    search_source: @version_api_search_source
+    replace: ""
 destination:
   plugin: 'entity:node'
   default_bundle: project_update_record
