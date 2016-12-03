@@ -23,7 +23,7 @@ class CSV extends CSVBase {
       ->condition('vid', 'drupal_core_version')
       ->condition('name', $row->api)
       ->execute();
-    if (empty($tids)) {
+    if (empty($tids) && !empty($row->api)) {
       $term = Term::create([
         'vid' => 'drupal_core_version',
         'name' => $row->api,
