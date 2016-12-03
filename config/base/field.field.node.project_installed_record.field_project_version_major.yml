@@ -1,0 +1,23 @@
+uuid: 98481c5b-03c0-4608-8d28-63cfad9874e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_version_major
+    - node.type.project_installed_record
+id: node.project_installed_record.field_project_version_major
+field_name: field_project_version_major
+entity_type: node
+bundle: project_installed_record
+label: 'Project Version Major'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

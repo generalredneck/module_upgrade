@@ -1,0 +1,23 @@
+uuid: f9bcbc4f-a51b-480c-a9ea-dbfa6c66a6dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_version_patch
+    - node.type.project_update_record
+id: node.project_update_record.field_project_version_patch
+field_name: field_project_version_patch
+entity_type: node
+bundle: project_update_record
+label: 'Project Version Patch'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

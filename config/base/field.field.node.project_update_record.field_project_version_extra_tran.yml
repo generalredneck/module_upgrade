@@ -1,0 +1,23 @@
+uuid: af4aedce-dd40-4a0b-b140-848b2cf002d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_version_extra_tran
+    - node.type.project_update_record
+id: node.project_update_record.field_project_version_extra_tran
+field_name: field_project_version_extra_tran
+entity_type: node
+bundle: project_update_record
+label: 'Project Version Extra String Transformed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

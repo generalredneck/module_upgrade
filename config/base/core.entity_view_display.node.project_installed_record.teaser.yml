@@ -14,4 +14,13 @@ mode: teaser
 content:
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_drupal_core_version: true
+  field_project: true
+  field_project_version: true
+  field_project_version_extra: true
+  field_project_version_extra_num: true
+  field_project_version_extra_tran: true
+  field_project_version_major: true
+  field_project_version_patch: true
+  field_site: true

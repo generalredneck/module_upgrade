@@ -43,7 +43,9 @@ process:
     -
       plugin: migration
       migration: module_upgrade_migrate_projects
-      source: project_machine_name
+      source:
+        - project_machine_name
+        - api
     -
       plugin: skip_on_empty
       method: row
@@ -55,10 +57,11 @@ process:
   field_project_version:
     plugin: str_replace
     source: version
-    search_source: @version_api_search_source
-    replace: ""
+    search_source: '@version_api_search_source'
+    replace: ''
 destination:
   plugin: 'entity:node'
   default_bundle: project_update_record
 migration_dependencies:
   required: {  }
+  optional: {  }

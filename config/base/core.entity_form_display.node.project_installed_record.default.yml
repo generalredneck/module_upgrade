@@ -3,24 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.project_installed_record.field_drupal_core_version
     - field.field.node.project_installed_record.field_project
     - field.field.node.project_installed_record.field_project_version
+    - field.field.node.project_installed_record.field_project_version_extra
+    - field.field.node.project_installed_record.field_project_version_extra_num
+    - field.field.node.project_installed_record.field_project_version_extra_tran
+    - field.field.node.project_installed_record.field_project_version_major
+    - field.field.node.project_installed_record.field_project_version_patch
     - field.field.node.project_installed_record.field_site
+    - field.field.node.project_installed_record.og_audience
     - node.type.project_installed_record
+  module:
+    - og
 id: node.project_installed_record.default
 targetEntityType: node
 bundle: project_installed_record
 mode: default
 content:
-  field_drupal_core_version:
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_project:
     weight: 1
     settings:
@@ -36,6 +35,37 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_project_version_extra:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_project_version_extra_num:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_project_version_extra_tran:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_project_version_major:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_project_version_patch:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_site:
     weight: 4
     settings:
@@ -44,6 +74,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  og_audience:
+    type: og_complex
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    weight: 31
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0

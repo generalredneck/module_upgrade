@@ -1,0 +1,19 @@
+uuid: 1735bf5e-aa4d-40f0-9adf-d614673230d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_version_extra
+    - node.type.project_update_record
+id: node.project_update_record.field_project_version_extra
+field_name: field_project_version_extra
+entity_type: node
+bundle: project_update_record
+label: 'Project Version Extra'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

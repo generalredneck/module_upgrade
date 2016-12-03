@@ -18,12 +18,30 @@ source:
   header_row_count: 1
   keys:
     - project_machine_name
+    - api
+  constants:
+    space: ' '
 process:
   vid:
     plugin: default_value
     default_value: project
-  name: project_name
+  name:
+    plugin: concat
+    source:
+      - project_name
+      - constants/space
+      - api
   field_project_machine_name: project_machine_name
+  field_drupal_core_version:
+    -
+      plugin: entity_lookup
+      source: api
+      entity_type: taxonomy_term
+      bundle: drupal_core_version
+      value_key: name
+    -
+      plugin: skip_on_empty
+      method: row
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies: null

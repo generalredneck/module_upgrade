@@ -1,0 +1,20 @@
+uuid: 6e50af6c-5342-4d9c-a8c7-7ff58c7bfe46
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_project_version_patch
+field_name: field_project_version_patch
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.project_installed_record.field_drupal_core_version
     - field.field.node.project_installed_record.field_project
     - field.field.node.project_installed_record.field_project_version
+    - field.field.node.project_installed_record.field_project_version_extra
+    - field.field.node.project_installed_record.field_project_version_extra_num
+    - field.field.node.project_installed_record.field_project_version_extra_tran
+    - field.field.node.project_installed_record.field_project_version_major
+    - field.field.node.project_installed_record.field_project_version_patch
     - field.field.node.project_installed_record.field_site
+    - field.field.node.project_installed_record.og_audience
     - node.type.project_installed_record
   module:
     - user
@@ -15,13 +20,6 @@ targetEntityType: node
 bundle: project_installed_record
 mode: default
 content:
-  field_drupal_core_version:
-    weight: 104
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_project:
     weight: 102
     label: above
@@ -36,6 +34,45 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_project_version_extra:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_project_version_extra_num:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_project_version_extra_tran:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_project_version_major:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_project_version_patch:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_site:
     weight: 101
     label: above
@@ -45,4 +82,11 @@ content:
     type: entity_reference_label
   links:
     weight: 100
+  og_audience:
+    label: above
+    type: entity_reference_label
+    settings:
+      link: true
+    weight: 109
+    third_party_settings: {  }
 hidden: {  }
