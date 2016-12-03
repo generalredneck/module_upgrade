@@ -1,0 +1,17 @@
+uuid: e9352628-e77b-44d4-b492-3f9cb3f8b216
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Team
+type: team
+description: 'Teams of users that can add sites for auditing.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

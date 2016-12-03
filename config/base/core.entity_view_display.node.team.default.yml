@@ -1,0 +1,23 @@
+uuid: c3261920-e954-4ecd-93d0-5775e07fe0c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.team
+  module:
+    - og
+    - user
+id: node.team.default
+targetEntityType: node
+bundle: team
+mode: default
+content:
+  links:
+    weight: 100
+  og_group:
+    weight: 0
+    type: og_group_subscribe
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

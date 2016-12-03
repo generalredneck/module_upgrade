@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - taxonomy.vocabulary.drupal_core_version
     - taxonomy.vocabulary.project
+  content:
+    - 'taxonomy_term:drupal_core_version:0212ba04-e865-49b0-9edc-e3a6d0fdabe1'
+    - 'taxonomy_term:drupal_core_version:3f234df0-a35b-4d63-8a18-2ad0bc3b0863'
+    - 'taxonomy_term:drupal_core_version:79fb484d-86c9-4bea-8b4c-0346cf11fc25'
   module:
-    - basic_auth
     - rest
     - serialization
     - taxonomy
@@ -30,7 +34,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -69,14 +73,18 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: serializer
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
         options:
+          default_field_elements: true
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       fields:
         name:
           id: name
@@ -136,11 +144,148 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+        field_project_machine_name_value:
+          id: field_project_machine_name_value
+          table: taxonomy_term__field_project_machine_name
+          field: field_project_machine_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: machine_name_op
+            label: 'Machine Name (field_project_machine_name)'
+            description: ''
+            use_operator: true
+            operator: field_project_machine_name_value_op
+            identifier: machine_name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_owner: '0'
+              site_maintainer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: Name
+            description: ''
+            use_operator: false
+            operator: name_op
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_owner: '0'
+              site_maintainer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+        field_drupal_core_version_target_id:
+          id: field_drupal_core_version_target_id
+          table: taxonomy_term__field_drupal_core_version
+          field: field_drupal_core_version_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            16: 16
+            15: 15
+            14: 14
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: drupal_core_version
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts: {  }
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_drupal_core_version:
+          id: field_drupal_core_version
+          table: taxonomy_term__field_drupal_core_version
+          field: field_drupal_core_version
+          relationship: none
+          group_type: group
+          admin_label: 'field_drupal_core_version: Taxonomy term'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -148,8 +293,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - request_format
+        - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }
   rest_export_1:
@@ -161,9 +307,26 @@ display:
       display_extenders: {  }
       path: taxonomy/project
       pager:
-        type: none
+        type: full
         options:
+          items_per_page: 100
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
         type: serializer
         options:
@@ -174,12 +337,15 @@ display:
         type: data_entity
         options: {  }
       auth:
-        - basic_auth
+        - user
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
+        - url
+        - url.query_args
+        - user
         - user.permissions
       tags: {  }

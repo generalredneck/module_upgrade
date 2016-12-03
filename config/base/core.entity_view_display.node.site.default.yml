@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.site.field_drupal_core_version
     - field.field.node.site.field_url
+    - field.field.node.site.og_audience
     - node.type.site
   module:
     - link
@@ -34,4 +35,11 @@ content:
     type: link
   links:
     weight: 100
+  og_audience:
+    label: above
+    type: entity_reference_label
+    settings:
+      link: true
+    weight: 103
+    third_party_settings: {  }
 hidden: {  }

@@ -1,48 +1,20 @@
-uuid: cca777fb-d2ed-4ad0-af38-2ab4cc738a5c
+uuid: 6dbc9ac2-6d10-4eb1-bc5f-7d16b5adf401
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.site.field_drupal_core_version
-    - field.field.node.site.field_url
-    - field.field.node.site.og_audience
-    - node.type.site
+    - node.type.team
   module:
-    - link
-    - og
     - path
-id: node.site.default
+id: node.team.default
 targetEntityType: node
-bundle: site
+bundle: team
 mode: default
 content:
   created:
     type: datetime_timestamp
     weight: 10
     settings: {  }
-    third_party_settings: {  }
-  field_drupal_core_version:
-    weight: 32
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-  field_url:
-    weight: 31
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-  og_audience:
-    type: og_complex
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    weight: 33
     third_party_settings: {  }
   path:
     type: path

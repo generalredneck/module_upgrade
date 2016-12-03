@@ -1,0 +1,16 @@
+group_manager_full_access: true
+groups:
+  node:
+    - team
+node_access_strict: true
+delete_orphans: true
+delete_orphans_plugin_id: cron
+deny_subscribe_without_approval: true
+group_resolvers:
+  - route_group
+  - route_group_content
+  - request_query_argument
+  - user_access
+_core:
+  default_config_hash: y0F78q3-xwCry7ohMu7RmQyJWYSCcY-ZI12nbryxe_s
+use_queue: null

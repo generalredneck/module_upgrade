@@ -1,0 +1,14 @@
+uuid: 94836f35-0a62-4bd8-9c2d-e32c7839f08e
+langcode: en
+status: true
+dependencies: {  }
+id: node-team-non-member
+label: Non-member
+weight: null
+is_admin: null
+group_type: node
+group_bundle: team
+group_id: null
+permissions:
+  - subscribe
+role_type: required
