@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_help().
@@ -21,4 +22,40 @@ function module_upgrade_help($route_name, RouteMatchInterface $route_match) {
 
     default:
   }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function module_upgrade_entity_presave(EntityInterface $node) {
+  if ($node->getEntityTypeId() == 'node' && in_array($node->bundle(), ['project_update_record', 'project_installed_record'])) {
+    module_upgrade_fill_in_project_version_fields($node);
+  }
+}
+
+/**
+ * Populate the major, patch, and extra fields when saving project nodes.
+ */
+function module_upgrade_fill_in_project_version_fields(EntityInterface $project) {
+  $version_extra_strings = [
+    'dev' => 1,
+    'a' => 2,
+    'alpha' => 2,
+    'b' => 3,
+    'beta' => 3,
+    'rc' => 4,
+    '' => 5,
+    'p' => 6,
+    'pl' => 6,
+  ];
+  $version_parts = explode('.', $project->field_project_version->value);
+  $project->field_project_version_major->value = array_shift($version_parts);
+  $last_part = array_pop($version_parts);
+  $last_part_parts = explode('-', $last_part);
+  $project->field_project_version_patch->value = array_shift($last_part_parts);
+  $project->field_project_version_extra->value = implode('', $last_part_parts);
+  $extra_string = preg_replace("/[^a-z]/", '', strtolower($project->field_project_version_extra->value));
+  $project->field_project_version_extra_tran->value = isset($version_extra_strings[$extra_string]) ? $version_extra_strings[$extra_string] : 0;
+  $extra_num = preg_replace("/[^0-9]/", '', strtolower($project->field_project_version_extra->value));
+  $project->field_project_version_extra_num->value = empty($extra_num) ? 0 : $extra_num;
 }

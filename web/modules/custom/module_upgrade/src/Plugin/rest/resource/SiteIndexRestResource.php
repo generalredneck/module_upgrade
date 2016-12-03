@@ -18,7 +18,7 @@ use Psr\Log\LoggerInterface;
  *   id = "site_index_rest_resource",
  *   label = @Translation("Site Index"),
  *   uri_paths = {
- *     "canonical" = "/site"
+ *     "canonical" = "/rest/v1/site"
  *   }
  * )
  */
@@ -108,6 +108,7 @@ class SiteIndexRestResource extends ResourceBase {
       ->condition('type', 'site')
       ->condition('uid', $this->currentUser->id())
       ->execute();
+    \Drupal::Logger('module_upgrade')->notice(print_r($site_ids,TRUE));
     if (!$this->currentUser->hasPermission('access content') && !empty($site_ids)) {
       throw new AccessDeniedHttpException();
     }

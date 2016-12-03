@@ -1,0 +1,8 @@
+
+module_upgrade.site_projects_controller_listprojects:
+  path: '/site/{site_uuid}/projects'
+  defaults:
+    _controller: '\Drupal\module_upgrade\Controller\SiteProjectsController::listProjects'
+    _title: 'listProjects'
+  requirements:
+    _permission: 'access content'

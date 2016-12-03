@@ -65,3 +65,16 @@ function module_upgrade_update_8001() {
     ])->save();
   }
 }
+
+/**
+ * Split out existing versions into their parts for ease of query.
+ */
+function module_upgrade_update_8003() {
+  $ids = \Drupal::entityQuery('node')
+    ->condition('type', ['project_update_record', 'project_installed_record'], 'IN')
+    ->execute();
+  foreach ($ids as $id) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($id);
+    $node->save();
+  }
+}
