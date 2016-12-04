@@ -25,11 +25,36 @@ function module_upgrade_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_ENTITY_TYPE_insert().
  */
-function module_upgrade_entity_presave(EntityInterface $node) {
-  if ($node->getEntityTypeId() == 'node' && in_array($node->bundle(), ['project_update_record', 'project_installed_record'])) {
-    module_upgrade_fill_in_project_version_fields($node);
+function module_upgrade_taxonomy_term_insert(EntityInterface $term) {
+  if ($term->bundle() == 'project') {
+  kpr('here');
+    /** @var QueueFactory $queue_factory */
+    $queue_factory = \Drupal::service('queue');
+    /** @var QueueInterface $queue */
+    $queue = $queue_factory->get('module_upgrade_project_releases');
+    $item = new \stdClass();
+    $item->tid = $term->id();
+    $queue->createItem($item);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function module_upgrade_taxonomy_term_update(EntityInterface $term) {
+  if ($term->bundle() == 'project') {
+    module_upgrade_taxonomy_term_insert($term);
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function module_upgrade_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'entity' && in_array($entity->bundle(), ['project_update_record', 'project_installed_record'])) {
+    module_upgrade_fill_in_project_version_fields($entity);
   }
 }
 
